@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
 {
     public int EnemiesKilled = 0;
     public float TimeDelay = 3f;
-    public float TimeDelayCounter = 0;
+    private float TimeDelayCounter = 0;
     public Slider TimeDelaySlider;
+
     public Text killText;
     public AudioSource explosionSourceAudio;
     public AudioClip[] explosionSounds;
+
     public GameObject endGameCanvas;
     public GameObject mainCanvas;
     public Text endGameText;

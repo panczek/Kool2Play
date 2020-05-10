@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+//Script for spawning enemies and boosts for the player
+
 public class Spawner : MonoBehaviour
 {
     public float delayBetweenSpawn = 1f;
     public float DistanceToThePlayer = 20f; //if player is in the distance, the spawner wont spawn
     private float delayCounter = 0;
     public GameObject enemy;
+    public GameObject enemyParent;
     private GameObject player;
     public Transform cornerLT;
     public Transform cornerRT;
@@ -17,6 +20,7 @@ public class Spawner : MonoBehaviour
 
     public bool dropBoosts = true;
     public GameObject[] boosts;
+    public GameObject boostsParent;
     public float boostCounter = 10f;
     private float boostActualCounter;
     // Start is called before the first frame update
@@ -33,6 +37,7 @@ public class Spawner : MonoBehaviour
         
         if (delayCounter > delayBetweenSpawn)
         {
+            //picking random wall for the spawn point
             int RandomWall = Random.Range(0, 4);
             Vector3 spawnPos = cornerLT.position;
             if (RandomWall == 0)
@@ -55,12 +60,13 @@ public class Spawner : MonoBehaviour
             {
                 if (Vector3.Distance(spawnPos, player.transform.position) > DistanceToThePlayer)
                 {
-                    Instantiate(enemy, spawnPos, Quaternion.identity);
+                    GameObject tempEnemy =  Instantiate(enemy, spawnPos, Quaternion.identity);
+                    tempEnemy.transform.parent = enemyParent.transform;
                     delayCounter = 0f;
                 }
             }  
         }
-        if (dropBoosts)
+        if (dropBoosts)//if boost dropping is enabled
         {
             boostActualCounter -= Time.deltaTime;
             if(boostActualCounter <= 0f)
@@ -81,31 +87,16 @@ public class Spawner : MonoBehaviour
         {
             value1 = point1.transform.position.z;
             value2 = point2.transform.position.z;
-            float randomZ = 0;
-            if (value1 > value2)
-            {
-                randomZ = Random.Range(value2, value1);
-            }
-            else
-            {
-                randomZ = Random.Range(value1, value2);
-            }
-            
+
+            float randomZ = Random.Range(value1, value2);
             returnValue.z = randomZ;
         }
         else if (axis == 'z')
         {
             value1 = point1.transform.position.x;
             value2 = point2.transform.position.x;
-            float randomX = 0;
-            if (value1 > value2)
-            {
-                randomX = Random.Range(value2, value1);
-            }
-            else
-            {
-                randomX = Random.Range(value1, value2);
-            }
+
+            float randomX = Random.Range(value1, value2);
             returnValue.x = randomX;
         }
         return returnValue;
@@ -117,6 +108,7 @@ public class Spawner : MonoBehaviour
         float randomX = Random.Range(cornerLT.position.x, cornerRT.position.x);
         float randomZ = Random.Range(cornerLB.position.z, cornerLT.position.z);
         Vector3 spawnPos = new Vector3(randomX, 25f, randomZ);
-        Instantiate(boosts[random], spawnPos, Quaternion.identity);
+        GameObject tempBoost =  Instantiate(boosts[random], spawnPos, Quaternion.identity);
+        tempBoost.transform.parent = boostsParent.transform;
     }
 }

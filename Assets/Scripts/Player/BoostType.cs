@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//Script for boost prefab, determining the boost type 
 public class BoostType : MonoBehaviour
 {
     public PlayerBoosts.BoostType typeOfBoost;

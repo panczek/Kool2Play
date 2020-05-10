@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4471196493202962957}
   - component: {fileID: 4216636550966897596}
   - component: {fileID: 9039787626366848064}
-  - component: {fileID: 4189703456600528281}
+  - component: {fileID: 3815866662422372442}
   m_Layer: 0
   m_Name: ShotgunBullet
   m_TagString: Untagged
@@ -111,7 +111,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &4189703456600528281
+--- !u!114 &3815866662422372442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,11 +120,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8177115688089330293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b04d2a6a2d755c4bafdfef49d4863ad, type: 3}
+  m_Script: {fileID: 11500000, guid: f0014fe24fdc1aa41a6e0ab2ab9849b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
   damage: 2
   timeToDestroy: 3
-  shotgunBullet: 1
   shotgunTargets: 3

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2972917059817655340}
   - component: {fileID: 3299323575893990813}
   - component: {fileID: 7655779782556498529}
-  - component: {fileID: -5950982657426693192}
+  - component: {fileID: 2588676769608451389}
   m_Layer: 0
   m_Name: PistolBullet
   m_TagString: Untagged
@@ -111,7 +111,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &-5950982657426693192
+--- !u!114 &2588676769608451389
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,11 +120,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7365635752163693652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b04d2a6a2d755c4bafdfef49d4863ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 864a5a52f616d5949b42afcc80def775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
   damage: 5
   timeToDestroy: 3
-  shotgunBullet: 0
-  shotgunTargets: 3

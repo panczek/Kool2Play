@@ -4,6 +4,8 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Script for basic enemy controller
+
 public class EnemyController : MonoBehaviour
 {
     private float health;
@@ -19,6 +21,7 @@ public class EnemyController : MonoBehaviour
     private GameManager gameManager;
 
     public Material basicMaterial; //copy of the enemy material
+    //variables for the getting on fire effect - caused by the grenade
     public bool onFire = false;
     public GameObject fire;
     public GameObject dieExplosion;
