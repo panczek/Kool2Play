@@ -1,11 +1,18 @@
 # Kool2Play
 
 Controlls:
+
 WSAD - move
+
 Left mouse - pistol
+
 Right mouse - shotgun
+
 E - grenade
+
 Space - slow down time
+
+
 
 3rd party assets:
 
